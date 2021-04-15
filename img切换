@@ -1,0 +1,25 @@
+   window.onload=function (){
+            var last= document.getElementById("last");
+            var next= document.getElementById("next");
+            var img=document.getElementsByTagName("img")[0];
+            var p=document.getElementsByTagName("p")[0];
+            var imgArr=["img/1.png","img/2.png","img/3.png"];
+            var index=0;
+            p.innerText="一共"+imgArr.length+"张图片,当前第"+(index+1)+"张";
+            last.onclick=function (){
+                  index--;
+                if (index<0){
+                    index=(imgArr.length-1);
+                }
+                    img.src=imgArr[index];
+                    p.innerText="一共"+imgArr.length+"张图片,当前第"+(index+1)+"张";
+                }
+            next.onclick=function (){
+                index++;
+                if (index>(imgArr.length-1)){
+                    index=0;
+                }
+                    img.src=imgArr[index];
+                p.innerText="一共"+imgArr.length+"张图片,当前第"+(index+1)+"张";
+            }
+        }
